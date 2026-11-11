@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zhetian E-Sports — Competir é o nosso idioma</title>
+<meta name="description" content="Organização brasileira de Brawl Stars construída para competir, evoluir e conquistar o topo.">
+<link href="https://fonts.googleapis.com/css2?family=Lexend:ital,wght@0,300;0,400;0,600;0,800;1,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0305;--bg2:#12060a;--card:#1a0a0d;--line:#3d1b1d;--tx:#fff4f0;--mut:#c49a94;--ac:#ff2d1c;--ac2:#ff7a3d;--gold:#ffb04a;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--tx);font:400 16px/1.6 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,.ft{font-family:Lexend,Inter,sans-serif;text-transform:uppercase;letter-spacing:.02em;margin:0;line-height:1.1}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.eyebrow{color:var(--ac2);font-size:13px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:10px}
+h2{font-size:clamp(30px,6vw,46px);margin-bottom:12px}
+.sub{color:var(--mut);max-width:560px;margin:0 0 32px}
+.btn{display:inline-block;padding:12px 22px;border-radius:999px;font-weight:600;font-size:15px;border:1px solid var(--line);background:transparent;color:var(--tx);cursor:pointer;font-family:inherit}
+.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));border:0;color:#fff}
+.btn:hover{filter:brightness(1.15)}
+.dia{color:var(--ac2)}
+/* header */
+header{position:sticky;top:0;z-index:20;background:rgba(10,3,5,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+header::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:rgba(10,3,5,.9);z-index:-1}
+.nav{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{display:flex;align-items:center;gap:10px;font-family:Lexend;font-size:22px;font-weight:700;letter-spacing:.08em}
+.lg{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;color:#fff;font-weight:700}
+nav.m{display:flex;gap:22px;font-size:14px;color:var(--mut)}
+nav.m a:hover{color:var(--tx)}
+.act{display:flex;gap:8px;align-items:center}
+.act .btn{padding:8px 14px;font-size:13px}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--tx);border-radius:8px;width:40px;height:40px;font-size:20px}
+.drawer{display:none;flex-direction:column;padding:10px 20px 20px;border-top:1px solid var(--line);background:var(--bg)}
+.drawer a{padding:12px 0;border-bottom:1px solid var(--line)}
+.drawer.open{display:flex}
+@media(max-width:900px){nav.m,.act .hide{display:none}.burger{display:block}}
+/* hero */
+.hero{padding:70px 0 50px;text-align:center;background:radial-gradient(ellipse at 50% 0,#ff2d1c55,transparent 65%)}
+.hl{width:130px;height:130px;margin:0 auto 22px;border-radius:30px;background:linear-gradient(135deg,var(--ac),var(--ac2));display:grid;place-items:center;font:700 64px Lexend;color:#fff;box-shadow:0 0 70px #ff2d1c88}
+.hero h1{font-size:clamp(44px,12vw,92px);margin:8px 0 14px}
+.hero p{color:var(--mut);max-width:560px;margin:0 auto 26px;font-size:18px}
+.hero .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.tag{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:5px 14px;font-size:13px;color:var(--ac2);margin-bottom:14px}
+.badge{margin-top:30px;color:var(--gold);font-weight:600}
+.mq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:14px 0;white-space:nowrap}
+.mq div{display:inline-block;animation:mv 30s linear infinite;font:500 18px Lexend;text-transform:uppercase;letter-spacing:.08em;color:var(--mut)}
+.mq span{color:var(--ac2);margin:0 18px}
+@keyframes mv{to{transform:translateX(-50%)}}
+/* about */
+.two{display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+@media(max-width:800px){.two{grid-template-columns:1fr}}
+.stats{display:grid;gap:14px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 22px}
+.st b{display:block;font:700 40px Lexend;color:var(--ac2)}
+.st span{color:var(--mut);font-size:14px}
+/* cards */
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:var(--ac)}
+.img{aspect-ratio:4/3;display:grid;place-items:center;font:700 54px Lexend;color:#ffffff33;background:linear-gradient(135deg,#7a0f0a,#12060a)}
+.img.a{background:linear-gradient(135deg,#ff2d1c,#2a0508)}.img.b{background:linear-gradient(135deg,#ff7a3d,#3a0d08)}.img.c{background:linear-gradient(135deg,#c2180f,#12060a)}
+.cb{padding:18px}
+.cb h3{font-size:22px;margin:6px 0}
+.num{color:var(--mut);font:500 13px Lexend;letter-spacing:.15em}
+.mut{color:var(--mut);font-size:14px}
+.rk{color:var(--gold);font-size:13px;font-weight:600;margin:8px 0}
+.lnk{font-size:13px;color:var(--ac2);display:block;margin-top:6px}
+.tabs{display:flex;gap:8px;margin-bottom:22px}
+.tabs .btn.on{background:var(--ac);border-color:var(--ac)}
+.staff{margin-top:26px;padding:18px 22px;background:var(--card);border:1px solid var(--line);border-radius:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.pl{position:relative}
+.pl .nb{position:absolute;top:12px;left:14px;font:700 20px Lexend;color:var(--ac2)}
+.pill{position:absolute;top:12px;right:12px;background:var(--gold);color:#241a00;font-size:12px;font-weight:700;padding:3px 10px;border-radius:999px;z-index:1}
+.prize{margin-top:12px;padding-top:12px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}
+.prize b{font:700 26px Lexend;color:var(--gold)}
+/* live */
+.live{background:var(--bg2);border-block:1px solid var(--line)}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-bottom:22px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#f43;margin-right:8px;animation:bl 1.4s infinite}
+@keyframes bl{50%{opacity:.25}}
+.box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+/* shirt */
+.sizes{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}
+.sizes span,.sz{border:1px solid var(--line);border-radius:8px;padding:3px 10px;font-size:13px;color:var(--mut)}
+.price{font:700 28px Lexend;color:var(--ac2)}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:26px 0}
+.gal figure{margin:0}.gal figcaption{font-size:13px;color:var(--mut);margin-top:6px;text-align:center}
+.gal .img{aspect-ratio:1;font-size:38px}
+form{display:grid;gap:12px;margin-top:14px}
+input,select{width:100%;padding:13px 14px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--tx);font:inherit}
+input:focus,select:focus{outline:2px solid var(--ac);border-color:transparent}
+.pay{display:flex;gap:10px;align-items:center;flex-wrap:wrap;background:var(--bg);border:1px dashed var(--line);border-radius:12px;padding:12px;margin-top:8px}
+.pay code{flex:1;min-width:140px;color:var(--ac2);word-break:break-all}
+.ok{color:#5dffa6;font-weight:600;display:none}
+/* clips */
+.clip .img{aspect-ratio:16/9;position:relative}
+.play{width:60px;height:60px;border-radius:50%;background:#ffffffee;color:#fff;display:grid;place-items:center;font-size:24px}
+/* cta */
+.cta{text-align:center;background:radial-gradient(ellipse at 50% 100%,#ff2d1c55,transparent 70%),var(--bg2);border-block:1px solid var(--line)}
+.cta .row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+.cta .hl{width:80px;height:80px;font-size:40px;border-radius:20px}
+.big{padding:50px 0;text-align:center}
+.big .mq{margin-top:40px}
+footer{border-top:1px solid var(--line);padding:50px 0 30px;background:var(--bg2)}
+.fg{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px}
+@media(max-width:700px){.fg{grid-template-columns:1fr}}
+footer h4{font:500 14px Lexend;letter-spacing:.15em;text-transform:uppercase;color:var(--ac2);margin:0 0 12px}
+footer ul{list-style:none;padding:0;margin:0;display:grid;gap:8px;color:var(--mut);font-size:14px}
+.copy{border-top:1px solid var(--line);margin-top:30px;padding-top:20px;color:var(--mut);font-size:13px}
+
+/* tema gradiente fogo */
+h2,h3{text-transform:none;letter-spacing:-.01em;font-weight:800}
+h1{font-weight:800}
+.eyebrow{color:#fff;font-size:12px;letter-spacing:.18em;font-weight:600}
+.eyebrow::after{content:"";display:block;width:36px;height:2px;margin-top:8px;background:linear-gradient(90deg,var(--ac),var(--ac2))}
+.btn.p{background:linear-gradient(135deg,#ff2d1c,#ff7a3d);color:#fff}
+section{position:relative;overflow:hidden}
+section::before{content:"";position:absolute;inset:-20%;z-index:0;pointer-events:none;background:radial-gradient(circle at 90% 5%,#ff2d1c40,transparent 42%),radial-gradient(circle at 5% 95%,#ff7a3d26,transparent 40%)}
+section>.wrap{position:relative;z-index:1}
+.card,.box,.st,.staff{background:linear-gradient(160deg,#241012cc,#0c0406cc);border-radius:20px}
+.st:first-child{background:linear-gradient(135deg,#ff2d1c,#ff7a3d);border:0}
+.st:first-child b,.st:first-child span{color:#fff}
+.st b,.price{color:var(--ac2)}
+.mq{background:linear-gradient(90deg,#2a0508,#12060a,#2a0508)}
+.live,.cta{background:var(--bg2)}
+.hero{margin:14px;border-radius:26px;text-align:left;padding:56px 0 30px;background:radial-gradient(circle at 80% 0,#ff2d1c 0,transparent 50%),radial-gradient(circle at 10% 100%,#ff7a3d99 0,transparent 55%),radial-gradient(circle at 55% 45%,#8a0f0a 0,transparent 60%),#12060a;border:1px solid var(--line)}
+.hero .hl{margin:0 0 28px;background:#fff;color:#e8210f;box-shadow:none;width:96px;height:96px;font-size:50px}
+.hero h1{font-size:clamp(42px,11vw,96px);letter-spacing:.01em}
+.hero p{margin:0 0 26px;font-style:italic;font-weight:300;font-size:clamp(16px,3.5vw,22px);color:#ffe6df;max-width:620px}
+.hero .row{justify-content:flex-start}
+.tag{border-color:#ffffff55;color:#fff}
+.hrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-top:56px;padding-top:20px;border-top:1px solid #ffffff55;font-size:14px;font-weight:300;color:#fff}
+.hrow small{display:block;font-size:12px;color:#ffd3c6;margin-bottom:2px}
+.gal .img,.img{filter:saturate(1.1)}
+::selection{background:var(--ac);color:#fff}
+
+/* glass */
+:root{--gl:linear-gradient(135deg,rgba(255,255,255,.11),rgba(255,255,255,.02) 45%,rgba(255,150,130,.09));--gb:1px solid rgba(255,255,255,.18);--gs:inset 0 1px 0 rgba(255,255,255,.28),inset 0 -1px 0 rgba(0,0,0,.45),0 16px 40px rgba(0,0,0,.38)}
+header{background:none;border:0;backdrop-filter:none;padding:10px 12px 0}
+header::before{display:none}
+header .hw{padding:0}
+.nav{height:60px;padding:0 10px 0 12px;border-radius:999px;border:var(--gb);background:linear-gradient(90deg,rgba(255,255,255,.04) 0,rgba(215,225,230,.2) 50%,rgba(255,255,255,.04) 100%),rgba(20,8,10,.55);backdrop-filter:blur(20px) saturate(140%);-webkit-backdrop-filter:blur(20px) saturate(140%);box-shadow:var(--gs)}
+.logo{font-size:18px;gap:12px}
+.lg{width:38px;height:38px;border-radius:50%;color:#fff;font-size:16px;background:radial-gradient(circle at 35% 28%,rgba(255,255,255,.65),rgba(255,122,61,.45) 38%,rgba(255,45,28,.35) 72%);border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 2px 6px rgba(255,255,255,.5),inset 0 -7px 10px rgba(0,0,0,.45),0 0 18px rgba(255,45,28,.4)}
+nav.m{gap:34px;font-size:15px;color:#e9dcd8}
+nav.m a{padding:6px 2px;transition:.2s}
+nav.m a:hover{color:#fff;text-shadow:0 0 14px rgba(255,122,61,.9)}
+.seg{display:flex;padding:3px;border-radius:999px;border:var(--gb);background:rgba(255,255,255,.05);box-shadow:inset 0 1px 0 rgba(255,255,255,.2)}
+.seg a{padding:8px 16px;border-radius:999px;font-size:14px;color:#fff}
+.seg a.on{background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,45,28,.5));border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 16px rgba(255,45,28,.35)}
+.burger{width:42px;height:42px;padding:0;border-radius:50%;border:var(--gb);background:var(--gl);place-items:center;align-content:center;gap:4px;box-shadow:inset 0 1px 0 rgba(255,255,255,.3)}
+.burger i{display:block;width:20px;height:3px;border-radius:3px;background:linear-gradient(90deg,rgba(255,255,255,.55),rgba(255,255,255,.95));box-shadow:inset 0 1px 1px #fff}
+@media(max-width:900px){.burger{display:grid}}
+.drawer{margin-top:8px;padding:8px 24px;border:var(--gb);border-radius:28px;background:var(--gl),rgba(20,8,10,.75);backdrop-filter:blur(20px);box-shadow:var(--gs)}
+.drawer a:last-child{border:0}
+.card,.box,.st,.staff,.pay{background:var(--gl),rgba(20,8,10,.5);border:var(--gb);border-radius:28px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:var(--gs)}
+.pay{border-radius:999px;padding:8px 8px 8px 18px;box-shadow:inset 0 1px 0 rgba(255,255,255,.15)}
+.card .img{border-radius:0}
+.st:first-child{background:linear-gradient(135deg,rgba(255,45,28,.95),rgba(255,122,61,.9));border:1px solid rgba(255,255,255,.35)}
+.btn{border:var(--gb);background:var(--gl);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),inset 0 -1px 0 rgba(0,0,0,.3);backdrop-filter:blur(10px)}
+.btn.p{border:1px solid rgba(255,255,255,.4);background:linear-gradient(135deg,#ff2d1c,#ff7a3d);box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 6px 24px rgba(255,45,28,.45)}
+.tabs{display:inline-flex;gap:0;padding:4px;border-radius:999px;border:var(--gb);background:rgba(255,255,255,.05)}
+.tabs .btn{border:0;background:none;box-shadow:none}
+.tabs .btn.on{background:linear-gradient(135deg,rgba(255,255,255,.28),rgba(255,45,28,.5));border:1px solid rgba(255,255,255,.4);box-shadow:inset 0 1px 0 rgba(255,255,255,.5)}
+.sizes span{border-radius:999px;border:var(--gb);background:rgba(255,255,255,.06);padding:3px 12px}
+input,select{border-radius:999px;padding:14px 20px;border:var(--gb);background:rgba(255,255,255,.06);box-shadow:inset 0 2px 6px rgba(0,0,0,.4)}
+.pill{background:linear-gradient(135deg,rgba(255,255,255,.35),rgba(255,176,74,.7));color:#2a0f00;border:1px solid rgba(255,255,255,.5)}
+.mq{background:rgba(255,255,255,.04);backdrop-filter:blur(10px)}
+
+/* menu moderno */
+.hw{position:relative}
+.scrim{position:fixed;inset:0;z-index:15;background:rgba(6,1,2,.55);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);opacity:0;pointer-events:none;transition:opacity .3s}
+.scrim.open{opacity:1;pointer-events:auto}
+body.lock{overflow:hidden}
+.drawer{display:flex;position:absolute;left:0;right:0;top:calc(100% + 10px);margin:0;padding:12px;flex-direction:column;gap:2px;max-height:calc(100vh - 100px);overflow:auto;opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-14px) scale(.94);transform-origin:90% 0;transition:opacity .25s,transform .4s cubic-bezier(.2,1.1,.3,1),visibility .25s;border-radius:32px;background:radial-gradient(circle at 100% 0,rgba(255,45,28,.28),transparent 55%),var(--gl),rgba(18,6,8,.82)}
+.drawer.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+.drawer a{padding:0;border:0}
+.drawer a.it{display:flex;align-items:center;gap:16px;padding:15px 18px;border-radius:20px;font-size:21px;font-weight:600;letter-spacing:-.01em;opacity:0;transform:translateY(14px);transition:opacity .35s,transform .45s cubic-bezier(.2,1,.3,1),background .2s}
+.drawer.open a.it,.drawer.open .dfoot{opacity:1;transform:none;transition-delay:calc(var(--i)*50ms + 110ms)}
+.drawer a.it b{font:600 12px Lexend;letter-spacing:.12em;color:var(--ac2);min-width:24px}
+.drawer a.it em{margin-left:auto;font-style:normal;color:var(--mut);transition:.25s}
+.drawer a.it:active,.drawer a.it:hover{background:linear-gradient(90deg,rgba(255,255,255,.12),rgba(255,45,28,.22))}
+.drawer a.it:hover em,.drawer a.it:active em{color:#fff;transform:translateX(4px)}
+.dfoot{margin-top:8px;padding:14px 6px 4px;border-top:1px solid rgba(255,255,255,.14);opacity:0;transform:translateY(14px);transition:opacity .35s,transform .45s}
+.drawer a.dcta{display:block;padding:15px;text-align:center;font-size:16px}
+.soc{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.drawer a.sc{flex:1;text-align:center;padding:10px 12px;border-radius:999px;border:var(--gb);background:rgba(255,255,255,.06);font-size:13px;color:var(--mut)}
+.burger i{transition:transform .35s cubic-bezier(.2,1,.3,1),opacity .2s}
+.burger.open i:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.burger.open i:nth-child(2){opacity:0;transform:scaleX(.2)}
+.burger.open i:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+@media(min-width:901px){.drawer,.scrim{display:none}}
+@media(prefers-reduced-motion:reduce){.drawer,.drawer a.it,.dfoot,.scrim{transition:none}}
+</style>
+</head>
+<body>
+<div class="scrim" id="sc"></div>
+<header>
+ <div class="wrap hw"><div class="nav">
+  <a class="logo" href="#inicio"><span class="lg">Z</span>ZHETIAN</a>
+  <nav class="m"><a href="#inicio">Início</a><a href="#organizacao">Organização</a><a href="#elencos">Elencos</a><a href="#resultados">Resultados</a><a href="#noticias">Notícias</a><a href="#patrocinadores">Patrocinadores</a><a href="#contato">Contato</a></nav>
+  <div class="act"><div class="seg"><a class="hide" href="#contato">Discord</a><a class="hide" href="#contato">Instagram</a><a class="on" href="#contato">Faça parte</a></div><button class="burger" id="bg" aria-label="Menu"><i></i><i></i><i></i></button></div>
+ </div>
+ <div class="drawer" id="dr" aria-hidden="true"><a class="it" style="--i:0" href="#inicio"><b>01</b>Início<em>→</em></a><a class="it" style="--i:1" href="#organizacao"><b>02</b>Organização<em>→</em></a><a class="it" style="--i:2" href="#elencos"><b>03</b>Elencos<em>→</em></a><a class="it" style="--i:3" href="#resultados"><b>04</b>Resultados<em>→</em></a><a class="it" style="--i:4" href="#noticias"><b>05</b>Notícias<em>→</em></a><a class="it" style="--i:5" href="#patrocinadores"><b>06</b>Patrocinadores<em>→</em></a><a class="it" style="--i:6" href="#contato"><b>07</b>Contato<em>→</em></a><div class="dfoot" style="--i:7"><a class="btn p dcta" href="#contato">Faça parte da Zhetian</a><div class="soc"><a class="sc" href="#">Discord</a><a class="sc" href="#">Instagram</a><a class="sc" href="#">TikTok</a></div></div></div></div>
+</header>
+
+<main id="inicio">
+<div class="hero"><div class="wrap">
+ <div class="hl">Z</div>
+ <span class="tag">Brawl Stars · Brasil</span>
+ <h1>Zhetian E‑Sports</h1>
+ <p>Uma organização brasileira de Brawl Stars construída para competir, evoluir e conquistar o topo.</p>
+ <div class="row"><a class="btn p" href="#elencos">Conheça nossos elencos</a><a class="btn" href="#resultados">Explore nossos resultados</a></div>
+ <div class="hrow"><div><small>Organização</small>Zhetian E‑Sports</div><div><small>Modalidade</small>Brawl Stars · Brasil</div><div><small>Temporada</small>2026</div><div><small>Lema</small>Competir é o nosso idioma · 3 títulos</div></div>
+</div></div>
+<div class="mq"><div id="m1"></div></div>
+
+<section id="organizacao"><div class="wrap two">
+ <div>
+  <div class="eyebrow">01 · A organização</div>
+  <h2>Mais do que uma organização. Uma ambição.</h2>
+  <p class="sub">A Zhetian E-Sports é uma organização brasileira de Brawl Stars dedicada à competitividade, ao desenvolvimento de talentos e à construção de uma estrutura preparada para grandes desafios.</p>
+  <p class="ft" style="font-size:24px;color:var(--ac2);margin:0 0 22px">Do Brasil para o topo.</p>
+  <a class="btn p" href="#elencos">Conheça a Zhetian</a>
+ </div>
+ <div class="stats">
+  <div class="st"><b>3</b><span>Títulos oficiais em 2026</span></div>
+  <div class="st"><b>R$ 570</b><span>Em premiações conquistadas</span></div>
+  <div class="st"><b>8</b><span>Atletas no elenco</span></div>
+ </div>
+</div></section>
+
+<section id="elencos" style="background:var(--bg2)"><div class="wrap">
+ <div class="eyebrow">02 · Elencos</div><h2>Quem veste a Zhetian</h2>
+ <div class="tabs"><button class="btn on">Main Team</button><button class="btn">Academy</button></div>
+ <p class="sub">Nosso elenco principal. Preparado para competir no mais alto nível.</p>
+ <div class="grid">
+  <div class="card pl"><span class="nb">01</span><div class="img a">V</div><div class="cb"><h3>VitorKing</h3><div class="mut">Player 1 · Brasil</div><div class="rk">◆ Rank Pro</div><a class="lnk" href="#">YouTube @vitorking01</a><a class="lnk" href="#">Ver perfil →</a></div></div>
+  <div class="card pl"><span class="nb">02</span><div class="img b">P</div><div class="cb"><h3>Phx</h3><div class="mut">Player 2 · Brasil</div><div class="rk">◆ Rank Pro</div><a class="lnk" href="#">Ver perfil →</a></div></div>
+  <div class="card pl"><span class="nb">03</span><div class="img c">I</div><div class="cb"><h3>Igor</h3><div class="mut">Player 3 · Brasil</div><div class="rk">◆ Rank Pro</div><a class="lnk" href="#">TikTok @igorbrawlstars7</a><a class="lnk" href="#">Ver perfil →</a></div></div>
+ </div>
+ <div class="staff"><div><div class="eyebrow" style="margin:0">Staff</div><b>WeakManager</b> · Brasil</div><div style="text-align:right"><b>Sermann</b><br><span class="mut">Presidente</span></div></div>
+</div></section>
+
+<section id="resultados"><div class="wrap">
+ <div class="eyebrow">03 · Resultados</div><h2>Nosso legado começa aqui</h2>
+ <p class="sub">Cada conquista representa evolução, trabalho e competitividade.</p>
+ <div class="grid">
+  <div class="card"><div class="img a" style="position:relative"><span class="pill">1º lugar</span>🏆</div><div class="cb"><h3>Copa Glacial</h3><div class="mut">07/09/2026 · Discord</div><div class="mut">2º lugar — Zhetian Academy</div><div class="prize"><span class="mut">Premiação conquistada</span><b>R$ 170</b></div></div></div>
+  <div class="card"><div class="img b" style="position:relative"><span class="pill">1º lugar</span>🏆</div><div class="cb"><h3>BSO Masters</h3><div class="mut">23/08/2026 · Matcherino</div><div class="prize"><span class="mut">Premiação conquistada</span><b>R$ 250</b></div></div></div>
+  <div class="card"><div class="img c" style="position:relative"><span class="pill">1º lugar</span>🏆</div><div class="cb"><h3>Copa do Mundo BS</h3><div class="mut">29/06/2026 · Discord</div><div class="prize"><span class="mut">Premiação conquistada</span><b>R$ 150</b></div></div></div>
+ </div>
+</div></section>
+
+<section class="live"><div class="wrap">
+ <div class="eyebrow">04 · Ao vivo</div><h2>Números da Main Team</h2>
+ <p class="sub">Estatísticas reais das nossas partidas, atualizadas automaticamente.</p>
+ <div class="sg">
+  <div class="st"><b>—</b><span>Partidas</span></div><div class="st"><b>—</b><span>Vitórias</span></div><div class="st"><b>—</b><span>Aproveitamento</span></div><div class="st"><b>—</b><span>Troféus</span></div>
+ </div>
+ <a class="lnk" href="#resultados" style="margin-bottom:22px">Ver estatísticas completas →</a>
+ <div class="box"><div class="mut"><span class="dot"></span>Verificando transmissão</div><h3 style="margin:10px 0 6px;font-size:24px">Os jogos vão ao ar no YouTube</h3><p class="mut" style="margin:0">Os jogos da Zhetian são transmitidos pelo canal do VitorKing no YouTube.</p></div>
+</div></section>
+
+<section id="uniformes"><div class="wrap">
+ <div class="eyebrow">05 · Uniformes</div><h2>Vista o manto</h2>
+ <p class="sub">As camisas oficiais da Zhetian E-Sports.</p>
+ <div class="grid">
+  <div class="card"><div class="img a">👕</div><div class="cb"><span class="num">01</span><h3>Camisa principal</h3><div class="mut">Uniforme oficial · frente e costas</div><div class="price">R$ 110,00</div><div class="sizes"><span>PP</span><span>P</span><span>M</span><span>G</span><span>GG</span><span>XG</span></div><a class="btn p" href="#comprar-camisa">Pedir a minha</a></div></div>
+  <div class="card"><div class="img b">👕</div><div class="cb"><span class="num">02</span><h3>Camisa — parte de trás</h3><div class="mut">Uniforme oficial · frente e costas</div><div class="price">R$ 110,00</div><div class="sizes"><span>PP</span><span>P</span><span>M</span><span>G</span><span>GG</span><span>XG</span></div><a class="btn p" href="#comprar-camisa">Pedir a minha</a></div></div>
+  <div class="card"><div class="img c">👥</div><div class="cb"><span class="num">03</span><h3>Elenco Zhetian</h3><div class="mut">Elenco oficial</div></div></div>
+ </div>
+ <div class="eyebrow" style="margin-top:44px">Galeria oficial</div>
+ <div class="gal">
+  <figure><div class="img a">1</div><figcaption>Frente e costas oficiais</figcaption></figure>
+  <figure><div class="img b">2</div><figcaption>O manto em destaque</figcaption></figure>
+  <figure><div class="img c">3</div><figcaption>Frente oficial</figcaption></figure>
+  <figure><div class="img a">4</div><figcaption>Escudo bordado</figcaption></figure>
+ </div>
+ <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px"><a class="btn" href="#comprar-camisa">Guia de tamanhos</a><a class="btn p" href="#comprar-camisa">Comprar pelo WhatsApp</a></div>
+ <div class="two" id="comprar-camisa" style="align-items:start">
+  <div class="box"><h3 style="font-size:26px">Quero a camisa — R$ 110,00</h3><p class="mut">Deixe seus dados e o tamanho: a equipe da Zhetian entra em contato para fechar a compra.</p>
+   <form id="fm"><input required placeholder="Nome"><input required type="tel" placeholder="WhatsApp"><select><option>PP</option><option>P</option><option selected>M</option><option>G</option><option>GG</option><option>XG</option></select><button class="btn p" type="submit">Cadastrar</button><div class="ok" id="ok">Pedido registrado! A equipe entrará em contato.</div></form></div>
+  <div class="box"><h3 style="font-size:22px">Como pagar</h3><p class="mut">Combine o valor com a equipe e finalize pelo Pix, no PicPay.</p><div class="mut">Pix · Chave e-mail</div><div class="pay"><code>sua-chave-pix@email.com</code><button class="btn" id="cp">Copiar chave</button></div><p class="mut" style="margin-bottom:0">Carteira: <b>PicPay</b></p></div>
+ </div>
+</div></section>
+
+<section style="background:var(--bg2)"><div class="wrap">
+ <div class="eyebrow">06 · Mídia</div><h2>Clipes da Zhetian</h2>
+ <p class="sub">Os momentos que definem nossa competitividade.</p>
+ <div class="grid">
+  <div class="card clip"><div class="img a"><div class="play">▶</div></div><div class="cb"><h3>Copa Glacial — Título</h3><div class="mut">Zhetian é campeã, na final contra a Zhetian Academy</div></div></div>
+  <div class="card clip"><div class="img b"><div class="play">▶</div></div><div class="cb"><h3>BSO Masters — Final</h3><div class="mut">Zhetian x RED HAWK. Zhetian campeã 💙</div></div></div>
+  <div class="card clip"><div class="img c"><div class="play">▶</div></div><div class="cb"><h3>Liga LNA — Título</h3><div class="mut">Zhetian é campeã da Liga LNA</div></div></div>
+  <div class="card clip"><div class="img a"><div class="play">▶</div></div><div class="cb"><h3>BSO Qualify — Final</h3><div class="mut">Zhetian Academy na final</div></div></div>
+ </div>
+ <p class="mut" style="margin-top:22px">Mais clipes oficiais chegam em breve. Acompanhe também no <a class="lnk" style="display:inline" href="#">TikTok</a>.</p>
+</div></section>
+
+<section id="noticias"><div class="wrap">
+ <div class="eyebrow">07 · Notícias</div><h2>Últimas notícias</h2>
+ <div class="grid" style="margin-top:26px">
+  <a class="card" href="#"><div class="img a">🏆</div><div class="cb"><div class="mut">Conquistas · 07/09/2026</div><h3>Copa Glacial: uma final inteiramente Zhetian</h3><p class="mut">O elenco principal conquista o título e a Academy fica com o segundo lugar.</p><span class="lnk">Ler matéria →</span></div></a>
+  <a class="card" href="#"><div class="img b">🏆</div><div class="cb"><div class="mut">Conquistas · 23/08/2026</div><h3>Zhetian conquista a BSO Masters contra a RED HAWK</h3><p class="mut">Título da BSO Masters e premiação de R$ 250 para a Zhetian.</p><span class="lnk">Ler matéria →</span></div></a>
+  <a class="card" href="#"><div class="img c">👥</div><div class="cb"><div class="mut">Elencos</div><h3>Conheça quem veste a Zhetian</h3><p class="mut">VitorKing, Phx e Igor formam o elenco principal de Brawl Stars.</p><span class="lnk">Ler matéria →</span></div></a>
+  <a class="card" href="#"><div class="img a">👕</div><div class="cb"><div class="mut">Uniformes</div><h3>A camisa oficial da Zhetian para a torcida</h3><p class="mut">O manto oficial custa R$ 110,00, com tamanhos do PP ao XG.</p><span class="lnk">Ler matéria →</span></div></a>
+ </div>
+</div></section>
+
+<section class="cta" id="contato"><div class="wrap">
+ <div class="hl" style="margin-bottom:16px">Z</div>
+ <div class="eyebrow">08 · Comunidade</div>
+ <h2>A torcida também veste Zhetian</h2>
+ <p class="sub" style="margin:0 auto">Brawl Stars, Zhetian e a nossa comunidade. Entre no Discord e faça parte dessa jornada.</p>
+ <div class="row"><a class="btn p" href="#">Entrar no Discord</a><a class="btn" href="#">Instagram</a></div>
+</div></section>
+
+<section><div class="wrap two">
+ <div><div class="eyebrow">Para a torcida</div><h2>Logo oficial para wallpaper</h2><p class="sub">Baixe o logo da Zhetian em alta qualidade e use no celular ou no PC.</p><a class="btn p" href="#">Baixar logo</a></div>
+ <div class="hl" style="margin:0 auto">Z</div>
+</div></section>
+
+<section class="big" id="patrocinadores" style="background:var(--bg2);border-top:1px solid var(--line)"><div class="wrap">
+ <h2>Junte-se à nossa jornada</h2><br><a class="btn p" href="#contato">Quero patrocinar a Zhetian</a>
+</div><div class="mq"><div id="m2"></div></div></section>
+</main>
+
+<footer><div class="wrap">
+ <div class="fg">
+  <div><a class="logo" href="#inicio"><span class="lg">Z</span>ZHETIAN E-SPORTS</a><p class="mut" style="margin-top:14px">Do Brasil para o topo. Uma organização de Brawl Stars construída para competir, evoluir e conquistar.</p></div>
+  <div><h4>Navegação</h4><ul><li><a href="#inicio">Início</a></li><li><a href="#organizacao">Organização</a></li><li><a href="#elencos">Elencos</a></li><li><a href="#resultados">Resultados</a></li><li><a href="#noticias">Notícias</a></li><li><a href="#patrocinadores">Patrocinadores</a></li><li><a href="#contato">Contato</a></li></ul></div>
+  <div><h4>Conecte-se</h4><ul><li>Instagram</li><li>Discord</li><li>TikTok</li><li>X (Twitter)</li><li>contato@seudominio.com</li></ul></div>
+ </div>
+ <div class="copy">© 2026 Zhetian E-Sports. Todos os direitos reservados.</div>
+</div></footer>
+
+<script>
+(function(){
+ var a=["1º Copa Glacial","1º BSO Masters","1º Copa do Mundo BS","Competir é o nosso idioma","Do Brasil para o topo"],h="";
+ for(var i=0;i<4;i++)a.forEach(function(t){h+=t+'<span>◆</span>'});
+ document.getElementById("m1").innerHTML=h;
+ var g="";for(var j=0;j<16;j++)g+='Competir é o nosso idioma<span>◆</span>';
+ document.getElementById("m2").innerHTML=g;
+ var dr=document.getElementById("dr"),bg=document.getElementById("bg"),sc=document.getElementById("sc");
+ function set(o){dr.classList.toggle("open",o);bg.classList.toggle("open",o);sc.classList.toggle("open",o);document.body.classList.toggle("lock",o);bg.setAttribute("aria-expanded",o);dr.setAttribute("aria-hidden",!o)}
+ bg.onclick=function(){set(!dr.classList.contains("open"))};
+ dr.onclick=function(e){if(e.target.closest("a"))set(false)};
+ sc.onclick=function(){set(false)};
+ document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false)});
+ window.addEventListener("resize",function(){if(innerWidth>900)set(false)});
+ document.getElementById("fm").onsubmit=function(e){e.preventDefault();document.getElementById("ok").style.display="block";e.target.reset()};
+ document.getElementById("cp").onclick=function(){var b=this,t=document.querySelector(".pay code").textContent;try{navigator.clipboard.writeText(t)}catch(x){}b.textContent="Copiado!";setTimeout(function(){b.textContent="Copiar chave"},1800)};
+})();
+</script>
+</body>
+</html>
